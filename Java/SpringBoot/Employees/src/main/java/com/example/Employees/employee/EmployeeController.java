@@ -23,6 +23,7 @@ public class EmployeeController {
 
     @PostMapping
     public void registerNewEmployee(@RequestBody Employee employee){
+        System.out.println(employee);
         employeeService.addNewEmployee(employee);
     }
 

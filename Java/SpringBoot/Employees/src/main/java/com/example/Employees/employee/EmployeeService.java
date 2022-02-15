@@ -1,6 +1,6 @@
 package com.example.Employees.employee;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import  org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -19,7 +19,6 @@ public class EmployeeService {
     }
 
     public List<Employee> getEmployees(){
-        System.out.println(employeeRepository.findAll());
         return employeeRepository.findAll();
     }
 

@@ -5,12 +5,26 @@ class Counter extends Component {
         count: 0,
         tags: ["tag1","tag2", "tag3"]
     };
+
+    // constructor(props) {
+    //     super(props);    
+    //     this.handleIncrement = this.handleIncrement.bind(this);  // This binding is necessary to make `this` work in the callback    
+    // }
+    // handleIncrement() {
+    //     console.log("Incremented");
+    //     console.log(this.state.count);
+    // }
+    
+    handleIncrement = () => {
+        console.log("Incremented");
+        console.log(this.state.count);
+    }
     
     render() { 
         return (
         <div>
             <span style={{fontSize: 30}} className={this.spanClassDefine()}>{this.formatCount()}</span>
-            <button className='btn btn-secondary btn-sm'>Increment</button>
+            <button onClick={this.handleIncrement} className='btn btn-secondary btn-sm'>Increment</button>
             {this.renderTags()}   
             {this.state.tags.length === 0 && <p>Please add Tags to display</p>}        
         </div>

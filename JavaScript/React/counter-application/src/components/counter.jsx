@@ -3,7 +3,6 @@ import React, { Component } from "react";
 class Counter extends Component {
   state = {
     count: 0,
-    tags: ["tag1", "tag2", "tag3"],
   };
 
   // constructor(props) {
@@ -32,21 +31,7 @@ class Counter extends Component {
         >
           Increment
         </button>
-        {this.renderTags()}
-        {this.state.tags.length === 0 && <p>Please add Tags to display</p>}
       </div>
-    );
-  }
-
-  renderTags() {
-    return this.state.tags.length === 0 ? (
-      <p>There are no tags to display</p>
-    ) : (
-      <ul>
-        {this.state.tags.map((tag) => (
-          <li key={tag}>{tag}</li>
-        ))}
-      </ul>
     );
   }
 

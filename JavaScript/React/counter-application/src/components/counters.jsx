@@ -5,7 +5,7 @@ class Counters extends Component {
   state = {
     counters: [
       { id: 1, value: 0 },
-      { id: 2, value: 4 },
+      { id: 2, value: 2 },
       { id: 3, value: 0 },
       { id: 4, value: 0 },
       { id: 5, value: 0 },
@@ -29,7 +29,7 @@ class Counters extends Component {
     let counters = this.state.counters.filter(
       (counter) => counter.id !== counterId
     );
-    this.setState({ counters: counters });
+    this.setState({ counters });
     console.log("Successfully Deleted the counter with ID: ", counterId);
   };
 
@@ -39,9 +39,8 @@ class Counters extends Component {
         {this.state.counters.map((counter) => (
           <Counter
             key={counter.id}
-            value={counter.value}
             onDelete={this.onDelete}
-            id={counter.id}
+            counter={counter}
           />
         ))}
         {this.renderTags()}

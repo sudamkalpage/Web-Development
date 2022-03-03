@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  state = {
-    value: this.props.counter.value,
-  };
-
   // constructor(props) {
   //     super(props);
   //     this.handleIncrement = this.handleIncrement.bind(this);  // This binding is necessary to make `this` work in the callback
@@ -14,18 +10,18 @@ class Counter extends Component {
   //     console.log(this.state.value   );
   // }
 
-  handleIncrement = () => {
-    this.setState({ value: this.state.value + 1 });
-  };
+  //   handleIncrement = () => {
+  //     this.setState({ value: this.state.value + 1 });
+  //   };
 
   spanClassDefine() {
     let classes = "badge m-2 badge-";
-    classes += this.state.value === 0 ? "warning" : "primary";
+    classes += this.props.counter.value === 0 ? "warning" : "primary";
     return classes;
   }
 
   formatCount() {
-    const { value } = this.state;
+    const { value } = this.props.counter;
     return value === 0 ? "Zero" : value;
   }
 
@@ -36,7 +32,7 @@ class Counter extends Component {
           {this.formatCount()}
         </span>
         <button
-          onClick={this.handleIncrement}
+          onClick={() => this.props.onIncrement(this.props.counter)}
           className="btn btn-secondary btn-sm"
         >
           Increment

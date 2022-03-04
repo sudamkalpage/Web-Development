@@ -3,6 +3,19 @@ import "./App.css";
 import Counters from "./components/counters";
 import Navbar from "./components/navbar";
 class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log(props);
+    console.log("App - Constructor");
+    // this.state = this.props.something;
+  }
+
+  componentDidMount() {
+    console.log("App - Mounted");
+    // AJAX Call (Asynchronous JavaScript and XML)
+    // this.setState({movies})
+  }
+
   state = {
     counters: [
       { id: 1, value: 0 },
@@ -18,6 +31,7 @@ class App extends Component {
       (counter) => counter.id !== counterId
     );
     this.setState({ counters });
+    console.log("App - Constructor");
     console.log("Successfully Deleted the counter with ID: ", counterId);
   };
 
@@ -38,6 +52,8 @@ class App extends Component {
     console.log("Successfully reset all the values");
   };
   render() {
+    console.log("App - Rendered");
+
     return (
       <React.Fragment>
         <Navbar

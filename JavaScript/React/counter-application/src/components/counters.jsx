@@ -19,20 +19,19 @@ class Counters extends Component {
   }
 
   render() {
+    const { onReset, onIncrement, counters, onDelete } = this.props;
+
     return (
       <div>
-        <button
-          className="btn btn-primary btn-sm m-2"
-          onClick={this.props.onReset}
-        >
+        <button className="btn btn-primary btn-sm m-2" onClick={onReset}>
           Reset
         </button>
-        {this.props.counters.map((counter) => (
+        {counters.map((counter) => (
           <Counter
             key={counter.id}
-            onDelete={this.props.onDelete}
+            onDelete={onDelete}
             counter={counter}
-            onIncrement={this.props.onIncrement}
+            onIncrement={onIncrement}
           />
         ))}
         {this.renderTags()}

@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 
-const Navbar = (props) => {
+const Navbar = ({ countersNo }) => {
   return (
     <nav className="navbar navbar-light bg-light">
       <a className="navbar-brand" href="#">
         Navbar
         <span className="badge badge-pill badge-secondary m-2">
-          {props.countersNo}
+          {countersNo}
         </span>
       </a>
     </nav>

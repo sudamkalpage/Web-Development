@@ -1,6 +1,18 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
+  componentDidUpdate(prevProps, PrevState) {
+    console.log("prevProps", prevProps);
+    console.log("PrevState", PrevState);
+    // if (prevProps.counter.value === this.props.value){
+    // Ajax call to get data
+    // }
+  }
+
+  componentWillUnmount() {
+    console.log("Counter - Unmount");
+  }
+
   // constructor(props) {
   //     super(props);
   //     this.handleIncrement = this.handleIncrement.bind(this);  // This binding is necessary to make `this` work in the callback

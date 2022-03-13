@@ -1,8 +1,11 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <React.Fragment>
       <Navbar countersNo={0} />

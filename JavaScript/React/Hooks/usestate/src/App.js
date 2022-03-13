@@ -37,6 +37,7 @@ function App() {
         <button className="btn btn-danger btn-lg m-2" onClick={Decrement}>
           -
         </button>
+
         <br></br>
 
         <span

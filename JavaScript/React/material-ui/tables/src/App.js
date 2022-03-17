@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import DataTable from "./pages/DataTable";
 import DenseTable from "./pages/DenseTable";
 import CollapaseTable from "./pages/CollapaseTable";
+import TableWithFilter from "./pages/TableWithFilter";
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/DataTable" element={<DataTable />} />
           <Route exact path="/DenseTable" element={<DenseTable />} />
-          CollapaseTable
           <Route exact path="/CollapaseTable" element={<CollapaseTable />} />
+          <Route exact path="/TableWithFilter" element={<TableWithFilter />} />
         </Routes>
       </Router>
     </div>

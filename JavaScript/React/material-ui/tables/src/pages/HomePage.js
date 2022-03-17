@@ -14,6 +14,9 @@ const ComponentA = () => {
         <li>
           <Link to="/CollapaseTable">CollapaseTable</Link>
         </li>
+        <li>
+          <Link to="/TableWithFilter">TableWithFilter</Link>
+        </li>
       </ul>
     </div>
   );

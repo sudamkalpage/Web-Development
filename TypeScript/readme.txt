@@ -8,6 +8,10 @@ tsc main.ts
 node main.js
 
 /* Var  */
-// Let Vs Var :Always use let. Let is the best with relavant scope.
-// any type is not recommended
-// enum is easier.(always try to decalre valuess explicitly) 
+Let Vs Var :Always use let. Let is the best with relavant scope.
+any type is not recommended. Always define the type.
+enum is easier.(always try to decalre valuess explicitly) 
+
+/*Fnc*/
+use arrow functions
+if more input arguements use interfaces

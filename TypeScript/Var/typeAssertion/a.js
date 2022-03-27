@@ -1,0 +1,13 @@
+var message;
+message = "sudam";
+var len;
+len = message.length;
+console.log(len);
+var len2;
+len2 = message.length;
+console.log(len2);
+var message1;
+message1 = "sudam";
+var len3;
+len3 = message1.length;
+console.log(len3);

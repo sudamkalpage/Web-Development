@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import {
   createTheme,
@@ -9,24 +9,55 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import { borders } from "@mui/system";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 function App() {
   const [resourceType, setResourceType] = useState("Posts");
+
+  useEffect(() => {
+    // each time resourcetype changed
+    console.log("App Mounted");
+  }, []);
+
+  useEffect(() => {
+    // each time rerender
+    console.log("Rerendered again");
+  });
+
+  useEffect(() => {
+    // each time resourcetype changed
+    console.log("ResourceType changed");
+
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  }, [resourceType]);
+
   return (
     <React.Fragment>
       <Container>
         <div>
-          <Button variant="contained" sx={{ m: 2, textTransform: "none" }}>
+          <Button
+            variant="contained"
+            sx={{ m: 2, textTransform: "none" }}
+            onClick={() => setResourceType("Posts")}
+          >
             Posts
           </Button>
-          <Button variant="contained" sx={{ m: 2, textTransform: "none" }}>
+          <Button
+            variant="contained"
+            sx={{ m: 2, textTransform: "none" }}
+            onClick={() => setResourceType("Users")}
+          >
             Users
           </Button>
-          <Button variant="contained" sx={{ m: 2, textTransform: "none" }}>
+          <Button
+            variant="contained"
+            sx={{ m: 2, textTransform: "none" }}
+            onClick={() => setResourceType("Comments")}
+          >
             Comments
           </Button>
         </div>
@@ -36,7 +67,7 @@ function App() {
               component="div"
               sx={{
                 m: 2,
-                width: "10%",
+                width: "15%",
                 textAlign: "center",
                 color: "secondary.main",
                 bgcolor: "warning.main",
@@ -45,7 +76,7 @@ function App() {
                 borderColor: "primary.main",
               }}
             >
-              <Typography variant="h5">visible</Typography>
+              <Typography variant="h5">{resourceType}</Typography>
             </Box>
 
             <Box component="div" sx={{ display: "inline", m: 2 }}>

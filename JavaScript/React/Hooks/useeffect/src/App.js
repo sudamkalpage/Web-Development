@@ -15,6 +15,7 @@ theme = responsiveFontSizes(theme);
 
 function App() {
   const [resourceType, setResourceType] = useState("Posts");
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     // each time resourcetype changed
@@ -32,7 +33,7 @@ function App() {
 
     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
       .then((response) => response.json())
-      .then((json) => console.log(json));
+      .then((json) => setItems(json));
   }, [resourceType]);
 
   return (
@@ -61,6 +62,7 @@ function App() {
             Comments
           </Button>
         </div>
+
         <div>
           <ThemeProvider theme={theme}>
             <Box
@@ -78,6 +80,10 @@ function App() {
             >
               <Typography variant="h5">{resourceType}</Typography>
             </Box>
+
+            {items.map((item) => {
+              return <pre>{JSON.stringify(item)}</pre>;
+            })}
 
             <Box component="div" sx={{ display: "inline", m: 2 }}>
               <Typography variant="h3">Responsive h3</Typography>

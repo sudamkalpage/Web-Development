@@ -28,12 +28,16 @@ function App() {
   });
 
   useEffect(() => {
-    // each time resourcetype changed
-    console.log("ResourceType changed");
-
     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
       .then((response) => response.json())
       .then((json) => setItems(json));
+
+    // each time resourcetype changed
+    console.log("ResourceType changed");
+
+    return () => {
+      console.log("Clean before next change");
+    };
   }, [resourceType]);
 
   return (

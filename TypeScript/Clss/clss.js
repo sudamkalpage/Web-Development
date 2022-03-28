@@ -1,5 +1,7 @@
 var Point = /** @class */ (function () {
-    function Point() {
+    function Point(x, y) {
+        this.x = x;
+        this.y = y;
     }
     Point.prototype.draw = function () {
         console.log("x is ", this.x, " & y is ", this.y);
@@ -14,3 +16,5 @@ var point = new Point();
 point.x = 1;
 point.y = 2;
 point.draw();
+var point2 = new Point(2, 3);
+point2.draw();

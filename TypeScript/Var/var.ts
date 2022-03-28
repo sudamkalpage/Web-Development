@@ -5,6 +5,9 @@ function myFunc() {
   let d: any; //not recommended
   let e: number[] = [1, 2, 3];
   let f: any[] = [1, "s", true, "sudam"];
+  let g: [number, string]; // tuple
+  g = [2, "sudam"];
+  console.log(g);
 
   const ColorRed = 0;
   const ColorGreen = 0;

@@ -5,6 +5,9 @@ function myFunc() {
     var d; //not recommended
     var e = [1, 2, 3];
     var f = [1, "s", true, "sudam"];
+    var g; // tuple
+    g = [2, "sudam"];
+    console.log(g);
     var ColorRed = 0;
     var ColorGreen = 0;
     var ColorBlue = 0;

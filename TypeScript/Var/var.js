@@ -1,13 +1,18 @@
 function myFunc() {
-    var a;
+    var a = 1;
     var b;
     var c;
     var d; //not recommended
     var e = [1, 2, 3];
     var f = [1, "s", true, "sudam"];
+    var h;
+    var i;
     var g; // tuple
     g = [2, "sudam"];
     console.log(g);
+    var person = {
+        name: "Sudam"
+    };
     var ColorRed = 0;
     var ColorGreen = 0;
     var ColorBlue = 0;

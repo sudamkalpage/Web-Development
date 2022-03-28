@@ -14,7 +14,7 @@ tsc main.ts && node main.js
 
 /* Var  */
 Let Vs Var :Always use let. Let is the best with relavant scope.
-any type is not recommended. Always define the type.
+any type is not recommended(use unknown type instead). Always define the type.
 enum is easier.(always try to decalre valuess explicitly) 
 
 /*Fnc*/

@@ -23,3 +23,4 @@ if more input arguements use interfaces
 
 /*Clss*/
 cohesion gather all related methods and attributes
+constructors can create variable without declaring

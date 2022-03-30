@@ -17,6 +17,9 @@ const ComponentA = () => {
         <li>
           <Link to="/TableWithFilter">TableWithFilter</Link>
         </li>
+        <li>
+          <Link to="/DataGrid">DataGrid</Link>
+        </li>
       </ul>
     </div>
   );

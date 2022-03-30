@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import "./App.css";
 import {
   createTheme,
@@ -23,7 +23,9 @@ function slowFunc(num: number) {
 function App() {
   const [num, setNum] = useState<number>(0);
   const [dark, setDark] = useState<Boolean>(true);
-  const doubleNumber = slowFunc(num);
+  const doubleNumber = useMemo(() => {
+    return slowFunc(num);
+  }, [num]);
   console.log(num);
 
   return (

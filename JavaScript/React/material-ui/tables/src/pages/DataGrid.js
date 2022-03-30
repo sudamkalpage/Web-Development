@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  DataGrid,
-  GridRowsProp,
-  GridColDef,
-  GridToolbar,
-} from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 
 const rows = [
   { id: 1, col1: "Hello", col2: "World" },

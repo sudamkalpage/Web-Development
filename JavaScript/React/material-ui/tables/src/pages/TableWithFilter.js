@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useEffect } from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useDemoData } from "@mui/x-data-grid-generator";
 
@@ -11,12 +10,6 @@ export default function BasicExampleDataGrid() {
     visibleFields: VISIBLE_FIELDS,
     rowLength: 10,
   });
-
-  useEffect(() => {
-    // each time resourcetype changed
-    console.log("first", data.columns[0]);
-    data.rows = [{ id: "aa" }];
-  }, []);
 
   console.log(data);
   console.log("cols", data.columns);

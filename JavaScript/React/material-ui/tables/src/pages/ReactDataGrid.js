@@ -1,10 +1,17 @@
 import React from "react";
 import ReactDataGrid from "@inovua/reactdatagrid-community";
 import "@inovua/reactdatagrid-community/index.css";
+import NumberFilter from "@inovua/reactdatagrid-community/NumberFilter";
 
 const columns = [
   { name: "name", header: "Name", minWidth: 50, defaultFlex: 2 },
-  { name: "age", header: "Age", maxWidth: 1000, defaultFlex: 1 },
+  {
+    name: "age",
+    header: "Age",
+    maxWidth: 1000,
+    defaultFlex: 1,
+    filterEditor: NumberFilter,
+  },
 ];
 
 const gridStyle = { minHeight: 550 };
@@ -29,11 +36,17 @@ const dataSource = [
   { id: 17, name: "Johny Perterson", age: 40 },
 ];
 
+const filterValue = [
+  { name: "name", operator: "startsWith", type: "string", value: "" },
+  { name: "age", operator: "gte", type: "number", value: 21 },
+];
+
 export default () => (
   <ReactDataGrid
     idProperty="id"
     columns={columns}
     dataSource={dataSource}
     style={gridStyle}
+    defaultFilterValue={filterValue}
   />
 );

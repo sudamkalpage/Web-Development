@@ -20,6 +20,9 @@ const ComponentA = () => {
         <li>
           <Link to="/DataGrid">DataGrid</Link>
         </li>
+        <li>
+          <Link to="/ReactDataGrid">ReactDataGrid</Link>
+        </li>
       </ul>
     </div>
   );
